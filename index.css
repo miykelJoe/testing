@@ -1,0 +1,204 @@
+:root {
+    /* Primary colors */
+    --Red: hsl(0, 100%, 74%);
+    --Green: hsl(154, 59%, 51%);
+
+    /* Accent */
+    --Blue: hsl(248, 32%, 49%);
+
+    /* Neutral */
+    --darkBlue: hsl(249, 10%, 26%);
+    --grayishBlue: hsl(246, 25%, 77%);
+    --white: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Red);
+    background-image: url(images/bg-intro-mobile.png);
+    background-blend-mode: lighten;
+    padding: 5.5em 1.2em 0;
+}
+
+main#main{
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'textContainer'
+    'form';
+    gap: 3.5em;
+}
+
+main#main #textContainer{
+    grid-area: textContainer;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main#main #textContainer h1#text{
+    margin-bottom: .5em;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+
+main#main #textContainer p#para {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+main#main .form{
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5em;
+}
+
+main .form .trial {
+    background-color: var(--Blue);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 1em 3em;
+    text-align: center;
+    margin: 0 0 1.3em 0;
+    border-radius: .4em;
+    box-shadow: 0px 5px 0px 1px rgba(0, 0, 0, 0.237);
+}
+
+main .form .formContainer{
+    background-color: var(--white);
+    border-radius: .5em;
+}
+
+main .form .formContainer form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .8em;
+}
+
+main .form .formContainer form table{
+    border-spacing: 10px;
+    width: 100%;
+}
+
+main .form .formContainer form table tr th input{
+    border: 1px solid rgb(164, 164, 164);
+    border-radius: .4em;
+    padding: 1.3em;
+    width: 100%;
+    margin: .3em 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    outline: none;
+}
+
+main .form .formContainer form table tr th input:hover {
+    border: 1px solid rgb(77, 77, 77);
+}
+
+main .form .formContainer form table tr th input.btn {
+    background-color: var(--Green);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0px 3px 0px 1px hsl(154, 59%, 45%);
+}
+
+
+main .form .formContainer form #tableFooter {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    text-align: center;
+    color: rgb(82, 82, 82);
+    width: 80%;
+}
+
+main .form .formContainer form #tableFooter b {
+    color: var(--Red);
+}
+
+@media (min-width: 375px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5.5em 1em 0;
+    }
+    main#main #textContainer{
+        max-width: 330px;
+    }
+    
+    main#main #textContainer h1#text{
+        width: 100%;
+        margin-bottom: .5em;
+        font-weight: 700;
+    }
+
+    main#main #textContainer p{
+        text-align: center;
+    }
+
+    main#main .form{
+        max-width: 330px;
+    }
+}
+
+@media (min-width: 1440px) {
+    body{
+        background-color: var(--Red);
+        background-image: url(images/bg-intro-desktop.png);
+        background-blend-mode: lighten;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7.5em 10em 0;
+    }
+
+    main#main{
+    display: grid;
+    grid-template-areas: 
+    'textContainer form';
+    gap: 2em;
+    }
+
+    main#main #textContainer{
+        max-width: 550px;
+        text-align: left;
+        margin-bottom: 5em;
+    }
+    
+    main#main #textContainer h1#text{
+        width: 100%;
+        margin-bottom: .5em;
+        font-weight: 700;
+        font-size: 3.2rem;
+    }
+
+    main#main #textContainer p{
+        text-align: left;
+    }
+
+    main#main .form{
+        max-width: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5em;
+    }
+}
